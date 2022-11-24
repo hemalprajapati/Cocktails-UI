@@ -25,7 +25,6 @@ An online food ordering system developed using Angular 10 and Material UI.
 - **History - We have maintained history if it was viewed**
 ![image](https://user-images.githubusercontent.com/14176663/203797275-7d8dd7dc-d1f9-4a35-a765-20f82130bf23.png)
 
-- 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
 ## Development server
