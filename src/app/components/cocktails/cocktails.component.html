@@ -1,0 +1,29 @@
+<app-nav-bar [userName]="userName"></app-nav-bar>
+<div class="cocktail-container">
+    <div class="menu-bar">
+        <h3 class="tagline">Choose your favourite Cocktails</h3>      
+        <div class="filters">
+            <app-search-bar (searchQueryEvent)="searchQuery($event)"></app-search-bar>
+            <app-dropdown [selectedValue]="selectedValue" [sortOptions]="sortOptions" (sortEvent)="sortCocktails($event)"></app-dropdown>
+        </div>
+    </div>
+
+    
+    
+    <div class="cocktail-cards" [class]="{'empty-search': !cocktails.length}" *ngIf="!cocktails.length">
+        <div class="empty-cocktail">
+            <mat-spinner *ngIf="!cocktailsConstant.length"></mat-spinner>
+            <h3 *ngIf="cocktailsConstant.length">
+                No Cocktails found!
+            </h3>
+        </div>
+    </div>
+
+    <div class="cocktail-cards">
+        <div *ngFor="let cocktail of cocktails" class="cocktail">
+            <app-cocktail-card [cocktailName]="cocktail.name" [cocktailThumbnail]="cocktail.image" [cocktailImage]="cocktail.image"
+            [cuisines]="cocktail.ingredients" [rating]="cocktail.ratings" [review]="cocktail.reviews" [isViewed]="isViewed(cocktail)" (click)="goToCocktail(cocktail)" ></app-cocktail-card>
+        </div>
+    </div>
+
+</div>
